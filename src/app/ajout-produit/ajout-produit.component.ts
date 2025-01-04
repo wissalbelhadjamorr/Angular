@@ -1,8 +1,7 @@
-// src/app/ajout-produit/ajout-produit.component.ts
 
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../shared/api.service';  // Importez ApiService
-import { Produit } from '../shared/produit.modal';  // Importez le modèle Produit
+import { ApiService } from '../shared/api.service'; 
+import { Produit } from '../shared/produit.modal';  
 
 @Component({
   selector: 'app-ajout-produit',
@@ -11,21 +10,21 @@ import { Produit } from '../shared/produit.modal';  // Importez le modèle Produ
 })
 export class AjoutProduitComponent implements OnInit {
 
-  produit: Produit = new Produit(0, '', '', 0, '', 0, '', []);  // Initialisez un produit vide
+  produit: Produit = new Produit(0, '', '', 0, '', 0, '', []); 
   produits: Produit[] = [];
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
     this.apiService.getProducts().subscribe(data => {
-      this.produits = data;  // Récupérez tous les produits au démarrage
+      this.produits = data;  
     });
   }
 
   ajouterProduit(): void {
     this.apiService.addProduct(this.produit).subscribe(() => {
       this.apiService.getProducts().subscribe(data => {
-        this.produits = data;  // Rechargez les produits après l'ajout
+        this.produits = data; 
       });
     });
   }
