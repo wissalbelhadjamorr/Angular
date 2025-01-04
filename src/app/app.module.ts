@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { AjoutProduitComponent } from './ajout-produit/ajout-produit.component';  // Assurez-vous que le chemin est correct
+import { AjoutProduitComponent } from './ajout-produit/ajout-produit.component';  
 
 import { FormsModule } from '@angular/forms';  // Importez FormsModule
 import { AjouterProduitComponent } from './ajout-produit/ajout-produit.component.spec';
@@ -9,11 +9,11 @@ import { AjouterProduitComponent } from './ajout-produit/ajout-produit.component
 @NgModule({
   declarations: [
     AppComponent,
-    AjouterProduitComponent  // Déclarez le composant AjouterProduitComponent
+    AjouterProduitComponent 
   ],
   imports: [
     BrowserModule,
-    FormsModule  // Ajoutez FormsModule ici
+    FormsModule  
   ],
   providers: [],
   bootstrap: [AppComponent]
