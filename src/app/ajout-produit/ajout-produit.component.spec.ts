@@ -1,14 +1,13 @@
-// src/app/ajout-produit/ajout-produit.component.ts
 import { Component } from '@angular/core';
 import { ApiService } from '../shared/api.service';  
 import { Produit } from '../shared/produit.modal';
 
 @Component({
   selector: 'app-ajouter-produit',
-  templateUrl: './ajouter-produit.component.html',  // Assurez-vous que le nom du fichier HTML est correct
+  templateUrl: './ajouter-produit.component.html', 
   styleUrls: ['./ajouter-produit.component.css']
 })
-export class AjouterProduitComponent {  // Nom correct de la classe ici
+export class AjouterProduitComponent {  
   Produit: Produit = {
     id: 0,
     name: '',
