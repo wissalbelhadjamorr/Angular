@@ -1,0 +1,48 @@
+<div class="container">
+
+    <div *ngFor="let produit of produits">
+      <div class="product-card">
+        <h3>{{ produit.name }}</h3>
+        <p>{{ produit.description }}</p>
+        <p><strong>Prix:</strong> {{ produit.price }} {{ produit.currency }}</p>
+        <p><strong>Stock:</strong> {{ produit.stock }}</p>
+        <p><strong>Catégorie:</strong> {{ produit.category }}</p>
+        <img *ngIf="produit.images && produit.images.length > 0"
+        [src]="isImageLocal(produit.images[0]) ? 'assets/' + produit.images[0] : produit.images[0]+ '?t=' + randomTime()"
+        alt="Image du produit" />
+        <button (click)="modif(produit)">Modifier</button>
+         <button (click)="suppr(produit.id)">Supprimer</button>
+      </div>
+    </div>
+    <div *ngIf="produitAModifier" class="modifier-form">
+      <h3>Modifier le produit</h3>
+      <form (ngSubmit)="enr()">
+        <label for="name">Nom :</label>
+        <input type="text" [(ngModel)]="produitAModifier.name" name="name" required /><br>
+        
+        <label for="description">Description :</label>
+        <input type="text" [(ngModel)]="produitAModifier.description" name="description" required /><br>
+        
+        <label for="price">Prix :</label>
+        <input type="number" [(ngModel)]="produitAModifier.price" name="price" required /><br>
+        
+        <label for="currency">Devise :</label>
+        <input type="text" [(ngModel)]="produitAModifier.currency" name="currency" /><br>
+        
+        <label for="stock">Stock :</label>
+        <input type="number" [(ngModel)]="produitAModifier.stock" name="stock" required /><br>
+        
+        <label for="category">Catégorie :</label>
+        <input type="text" [(ngModel)]="produitAModifier.category" name="category" required /><br>
+        
+        <label for="image">Image URL :</label>
+        <input type="text" [(ngModel)]="produitAModifier.images" name="image" /><br>
+      
+
+
+        <button type="submit">Sauvegarder les modifications</button>
+        <button type="button" (click)="annul()">Annuler</button>
+      </form>
+    </div>
+  </div>
+  
