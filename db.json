@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "name": "Smartphone XYZ",
+    "description": "Un smartphone avec écran de 6.5 pouces.",
+    "price": 499.99,
+    "currency": "USD",
+    "stock": 150,
+    "category": "Téléphones",
+    "images": ["https://example.com/images/smartphone1.jpg"]
+  }
+]

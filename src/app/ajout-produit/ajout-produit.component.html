@@ -1,0 +1,46 @@
+<!-- ajout-produit.component.html -->
+<div class="ajout-produit">
+  <h2>Ajouter un nouveau produit</h2>
+
+  <form (ngSubmit)="ajouterProduit()">
+    <div>
+      <label for="name">Nom du produit :</label>
+      <input type="text" id="name" [(ngModel)]="produit.name" name="name" required />
+    </div>
+
+    <div>
+      <label for="description">Description :</label>
+      <input type="text" id="description" [(ngModel)]="produit.description" name="description" required />
+    </div>
+
+    <div>
+      <label for="price">Prix :</label>
+      <input type="number" id="price" [(ngModel)]="produit.price" name="price" required />
+    </div>
+
+    <div>
+      <label for="currency">Monnaie :</label>
+      <input type="text" id="currency" [(ngModel)]="produit.currency" name="currency" />
+    </div>
+
+    <div>
+      <label for="stock">Stock :</label>
+      <input type="number" id="stock" [(ngModel)]="produit.stock" name="stock" required />
+    </div>
+
+    <div>
+      <label for="imageUrl">URL de l'image :</label>
+      <input type="text" id="imageUrl" [(ngModel)]="produit.images" name="imageUrl" />
+    </div>
+
+    <div>
+      <label for="category">Catégorie :</label>
+      <input type="text" id="category" [(ngModel)]="produit.category" name="category" />
+    </div>
+
+    <button type="submit">Ajouter produit</button>
+  </form>
+
+ 
+
+</div>
