@@ -9,7 +9,7 @@ import { Produit } from './produit.modal';
 })
 export class ApiService {
 
-  private apiUrl = 'http://localhost:3000/products';  // URL du json-server
+  private apiUrl = 'http://localhost:3000/products';  
 
   constructor(private http: HttpClient) { }
 
@@ -20,6 +20,6 @@ export class ApiService {
 
   // Ajouter un produit
   addProduct(product: Produit): Observable<Produit> {
-    return this.http.post<Produit>(this.apiUrl, product);  // Effectue une requête POST pour ajouter le produit
+    return this.http.post<Produit>(this.apiUrl, product);  
   }
 }
