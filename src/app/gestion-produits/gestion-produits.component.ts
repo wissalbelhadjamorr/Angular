@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../shared/api.service';  // Import du service pour récupérer les produits
-import { Produit } from '../shared/produit.modal';  // Modèle Produit
+import { ApiService } from '../shared/api.service'; 
+import { Produit } from '../shared/produit.modal';  
 
 @Component({
   selector: 'app-gestion-produits',
@@ -15,10 +15,10 @@ export class GestionProduitsComponent implements OnInit {
 
   ngOnInit(): void {
     this.apiService.getProducts().subscribe((data: Produit[]) => {
-      console.log('Produits récupérés:', data);  // Vérifiez que les données sont bien reçues
+      console.log('Produits récupérés:', data); 
       this.produits = data;
     }, error => {
-      console.error('Erreur lors de la récupération des produits:', error);
+
     });
   }
 }
